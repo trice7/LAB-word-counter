@@ -6,16 +6,20 @@ const wordCounter = (value) => {
 
   if (value) {
     // COMPLETE THE LOGIC 
-    wordCount.innerHTML = `Word Count: 0`; 
+    wordCount.innerHTML = `Word Count: ${value.split(" ").length}`; 
   } else {
     // if the value is empty, set the error message value to "Please input text"
-    error.innerHTML = ""; // UPDATE THIS
+    error.innerHTML = "Please input text"; // UPDATE THIS
   }
 }
 
 // OPTIONAL CHALLENGE
 const toggleMode = (btnText) => {
   // complete the function
+  document.body.style.backgroundColor = '#666a6d';
+  document.getElementById('textbox').style.backgroundColor = 'black';
+  document.getElementById('textbox').style.color = 'white';
+
 }
 
 // ************************************************ //
@@ -37,6 +41,8 @@ form.addEventListener("submit", (event) => {
   const value = textarea.value; // grab the value of the text area on submit
   wordCounter(value); // call the function and pass it the value
 });
+
+console.log('Test #2')
 
 form.addEventListener("reset", () => {
   error.innerHTML = ""; // on reset, clear the innderHTML
